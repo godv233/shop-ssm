@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- mybatis的全局配置 -->
+<configuration>
+	<!-- 配置日志框架 -->
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+	</settings>
+	<!-- mybatis分页插件配置： 拦截器思想-->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+		<!-- 设置数据库类型mysql -->
+			<property name="dialect" value="mysql"/>
+		</plugin>
+		
+	</plugins>
+	
+	
+</configuration>

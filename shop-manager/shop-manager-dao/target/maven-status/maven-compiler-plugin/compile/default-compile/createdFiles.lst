@@ -1,0 +1,11 @@
+com\java\mapper\TbUserMapper.class
+com\java\mapper\TbItemParamMapper.class
+com\java\mapper\TbContentMapper.class
+com\java\mapper\TbOrderItemMapper.class
+com\java\mapper\TbItemDescMapper.class
+com\java\mapper\TbOrderShippingMapper.class
+com\java\mapper\TbContentCategoryMapper.class
+com\java\mapper\TbItemCatMapper.class
+com\java\mapper\TbOrderMapper.class
+com\java\mapper\TbItemMapper.class
+com\java\mapper\TbItemParamItemMapper.class
