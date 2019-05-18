@@ -12,7 +12,7 @@
 		<spring.version>4.2.4.RELEASE</spring.version>
 		<mybatis.version>3.2.8</mybatis.version>
 		<mybatis.spring.version>1.2.2</mybatis.spring.version>
-		<mybatis.paginator.version>1.2.15</mybatis.paginator.version>
+		<mybatis.paginator.version>1.2.8</mybatis.paginator.version>
 		<mysql.version>5.1.32</mysql.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<jackson.version>2.8.11.1</jackson.version>
@@ -25,7 +25,7 @@
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<commons-io.version>1.3.2</commons-io.version>
 		<commons-net.version>3.3</commons-net.version>
-		<pagehelper.version>3.4.2</pagehelper.version>
+		<pagehelper.version>4.1.6</pagehelper.version>
 		<jsqlparser.version>0.9.1</jsqlparser.version>
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
 		<jedis.version>2.7.2</jedis.version>

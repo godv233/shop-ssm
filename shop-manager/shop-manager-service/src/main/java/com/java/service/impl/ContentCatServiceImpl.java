@@ -58,23 +58,20 @@ public class ContentCatServiceImpl implements ContentCatService {
 	@Override
 	public List<UITreeNode> getContentCatList(long parentId) {
 		// 根据parentid查询子节点列表
-				TbContentCategoryExample example = new TbContentCategoryExample();
-				Criteria criteria = example.createCriteria();
-				//设置查询条件
-				criteria.andParentIdEqualTo(parentId);
-				//执行查询
-				List<TbContentCategory> catList = contentCatMapper.selectByExample(example);
-				//转换成EasyUITreeNode的列表
-				List<UITreeNode> nodeList = new ArrayList<>();
-				for (TbContentCategory tbContentCategory : catList) {
-					UITreeNode node = new UITreeNode();
-					node.setId(tbContentCategory.getId());
-					node.setText(tbContentCategory.getName());
-					node.setState(tbContentCategory.getIsParent()?"closed":"open");
-					//添加到列表
-					nodeList.add(node);
-				}
-				return nodeList;
+		TbContentCategoryExample example=new TbContentCategoryExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andParentIdEqualTo(parentId);
+		List<TbContentCategory> list = contentCatMapper.selectByExample(example);
+		List<UITreeNode> nodeList = new ArrayList<>();
+		for (TbContentCategory tbContentCategory : list) {
+			UITreeNode node = new UITreeNode();
+			node.setId(tbContentCategory.getId());
+			node.setText(tbContentCategory.getName());
+			node.setState(tbContentCategory.getIsParent() ? "closed" : "open");
+			// 添加到列表
+			nodeList.add(node);
+		}
+		return nodeList;
 	}
 
 	/*
@@ -100,29 +97,29 @@ public class ContentCatServiceImpl implements ContentCatService {
 		TbContentCategory contentCategory = contentCatMapper.selectByPrimaryKey(id);// 得到当前节点
 		if (!contentCategory.getIsParent()) {// 当前节点为叶子节点时：直接删除
 			contentCatMapper.deleteByPrimaryKey(id);
-		}
-		else if (contentCategory.getIsParent()) {//不是叶子节点就递归删除其父节点为id的所有节点
+		} else if (contentCategory.getIsParent()) {// 不是叶子节点就递归删除其父节点为id的所有节点
 			deleteParentIdCatgroy(id);
 		}
-		return E3Result.ok(); 
+		return E3Result.ok();
 	}
-	//删除父节点为id的所有节点
+
+	// 删除父节点为id的所有节点
 	public void deleteParentIdCatgroy(long id) {
 		TbContentCategory contentCategory = contentCatMapper.selectByPrimaryKey(id);// 得到当前节点
 		if (!contentCategory.getIsParent()) {
 			contentCatMapper.deleteByPrimaryKey(id);
 			return;
-		}else  {
-			TbContentCategoryExample example=new TbContentCategoryExample();
+		} else {
+			TbContentCategoryExample example = new TbContentCategoryExample();
 			Criteria criteria = example.createCriteria();
 			criteria.andParentIdEqualTo(id);
-			List<TbContentCategory> lists = contentCatMapper.selectByExample(example);//得到所有parentId为id的节点
-			contentCatMapper.deleteByPrimaryKey(id);//删除该节点
+			List<TbContentCategory> lists = contentCatMapper.selectByExample(example);// 得到所有parentId为id的节点
+			contentCatMapper.deleteByPrimaryKey(id);// 删除该节点
 			for (TbContentCategory tbContentCategory : lists) {
 				deleteParentIdCatgroy(tbContentCategory.getId());
 			}
 		}
-		
+
 	}
 
 }

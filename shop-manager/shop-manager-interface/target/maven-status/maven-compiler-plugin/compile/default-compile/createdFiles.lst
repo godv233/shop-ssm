@@ -1,2 +1,4 @@
 com\java\service\ItemCatService.class
 com\java\service\ItemService.class
+com\java\service\ContentService.class
+com\java\service\ContentCatService.class

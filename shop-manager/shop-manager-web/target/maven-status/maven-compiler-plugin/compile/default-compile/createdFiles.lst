@@ -1,5 +1,7 @@
 com\java\controller\test.class
 com\java\controller\ItemCatController.class
+com\java\controller\ContentController.class
+com\java\controller\ContentCatController.class
 com\java\controller\IndexPageController.class
 com\java\controller\PicController.class
 com\java\controller\ItemController.class
