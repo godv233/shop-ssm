@@ -1,4 +1,9 @@
+D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\RegisterService.java
 D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\ContentCatService.java
 D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\ContentService.java
+D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\LoginService.java
+D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\CartService.java
+D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\OrderService.java
 D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\ItemService.java
 D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\ItemCatService.java
+D:\MyCode\workspace\shop-ssm\shop-manager\shop-manager-interface\src\main\java\com\java\service\pojo\OrderInfo.java

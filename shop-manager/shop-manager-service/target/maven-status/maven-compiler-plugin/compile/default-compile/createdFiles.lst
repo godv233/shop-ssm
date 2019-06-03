@@ -1,4 +1,7 @@
-com\java\service\impl\ItemCatServiceImpl.class
 com\java\service\impl\ContentCatServiceImpl.class
+com\java\service\impl\ItemCatServiceImpl.class
+com\java\service\impl\LoginServiceImpl.class
 com\java\service\impl\ContentServiceImpl.class
+com\java\service\impl\OrderServiceImpl.class
+com\java\service\impl\RegisterServiceImpl.class
 com\java\service\impl\ItemServiceImpl.class

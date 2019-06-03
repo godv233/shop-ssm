@@ -1,5 +1,6 @@
 package com.java.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import com.java.mapper.TbItemMapper;
 import com.java.pojo.TbItem;
 import com.java.pojo.TbItemDesc;
 import com.java.pojo.TbItemExample;
+import com.java.pojo.TbItemExample.Criteria;
 import com.java.service.ItemService;
 
 @Service
@@ -53,7 +55,7 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public E3Result addItem(TbItem item, String descption) {
 		// 使用工具类生成商品id
-		long itemId = IDUtils.genItemId();
+		long itemId = IDUtils.getItemId();
 		// 补全商品信息
 		item.setId(itemId);
 		item.setStatus((byte) 1);// 1正常 2下架 3删除
@@ -142,8 +144,8 @@ public class ItemServiceImpl implements ItemService {
 		int updateByPrimaryKeySelective = itemMapper.updateByPrimaryKeySelective(item);
 		// 将商品的详细介绍提交到数据库
 		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(item.getId());
-		if (itemDesc==null) {
-			itemDesc=new TbItemDesc();
+		if (itemDesc == null) {
+			itemDesc = new TbItemDesc();
 			itemDesc.setItemDesc(descption);
 			itemDesc.setCreated(new Date());
 			itemDesc.setUpdated(new Date());
@@ -155,6 +157,33 @@ public class ItemServiceImpl implements ItemService {
 		} else {
 			return false;
 		}
+	}
+
+	// 将数据据的前八件商品展示到index
+	@Override
+	public List<TbItem> getIndexItem1List() {
+		// 设置查询条件
+		List<Long> ConditionList = new ArrayList<>();
+		ConditionList.add(605616L);
+		ConditionList.add(635906L);
+		ConditionList.add(679532L);
+		ConditionList.add(917461L);
+		ConditionList.add(917770L);
+		ConditionList.add(919669L);
+		ConditionList.add(925237L);
+		ConditionList.add(927779L);
+		TbItemExample example = new TbItemExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andIdIn(ConditionList);
+		List<TbItem> list = itemMapper.selectByExample(example);
+		return list;
+	}
+
+	// 根据商品的id取得商品的具体描述
+	@Override
+	public TbItemDesc getItemDesc(long itemId) {
+		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+		return itemDesc;
 	}
 
 }

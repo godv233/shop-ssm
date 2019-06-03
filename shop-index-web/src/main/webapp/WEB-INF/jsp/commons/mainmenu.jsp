@@ -616,7 +616,7 @@
     <!----menufloat------->
     <div class="menu1">
       <ul>
-		  <li><a name="sfbest_hp_hp_nav_nav1" href="http://www.e3mall.cn" class="trackref btndown">首页</a></li>
+		  <li><a name="sfbest_hp_hp_nav_nav1" href="/" class="trackref btndown">首页</a></li>
 	
 			<li id="cat1">
 			  <a name="sfbest_hp_hp_nav_nav3" class="trackref" href="/fresh/">优选生鲜</a>

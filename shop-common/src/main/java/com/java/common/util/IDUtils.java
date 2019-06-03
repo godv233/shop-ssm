@@ -1,6 +1,7 @@
 package com.java.common.util;
 
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * 各种id生成策略
@@ -30,7 +31,7 @@ public class IDUtils {
 	/**
 	 * 商品id生成
 	 */
-	public static long genItemId() {
+	public static long getItemId() {
 		//取当前时间的长整形值包含毫秒
 		long millis = System.currentTimeMillis();
 		//long millis = System.nanoTime();
@@ -42,9 +43,16 @@ public class IDUtils {
 		long id = new Long(str);
 		return id;
 	}
+	/**
+	 * 订单id生成
+	 */
+	public static long getOrderId() {
+		return Math.abs(UUID.randomUUID().getLeastSignificantBits());
+	}
+	
 	
 	public static void main(String[] args) {
 		for(int i=0;i< 100;i++)
-		System.out.println(genItemId());
+		System.out.println(getOrderId());
 	}
 }

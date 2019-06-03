@@ -27,6 +27,7 @@ import com.java.service.ContentService;
 public class ContentServiceImpl implements ContentService {
 	@Autowired
 	private TbContentMapper contentMapper;
+
 	/**
 	 * 内容分页查询
 	 */
@@ -49,16 +50,27 @@ public class ContentServiceImpl implements ContentService {
 		result.setRows(lists);
 		return result;
 	}
-	
+
 	@Override
 	public E3Result addContent(TbContent content) {
-		//将内容数据插入到内容表
+		// 将内容数据插入到内容表
 		content.setCreated(new Date());
 		content.setUpdated(new Date());
-		//插入到数据库
+		// 插入到数据库
 		contentMapper.insert(content);
 		return E3Result.ok();
 	}
-	
-	
+
+	// 在前台，根据内容分类id，查询内容列表
+	@Override
+	public List<TbContent> getContentListByCid(long cid) {
+		//设置条件
+		TbContentExample example=new TbContentExample();
+		Criteria createCriteria = example.createCriteria();
+		createCriteria.andCategoryIdEqualTo(cid);
+		//执行
+		List<TbContent> list = contentMapper.selectByExampleWithBLOBs(example);
+		return list;
+	}
+
 }

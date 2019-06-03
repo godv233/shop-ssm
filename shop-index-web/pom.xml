@@ -16,6 +16,30 @@
 			<artifactId>shop-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!-- 依赖dao -->
+		<dependency>
+			<groupId>com.java.shop</groupId>
+			<artifactId>shop-manager-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 依赖interface -->
+		<dependency>
+			<groupId>com.java.shop</groupId>
+			<artifactId>shop-manager-interface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 依赖service -->
+		<dependency>
+			<groupId>com.java.shop</groupId>
+			<artifactId>shop-manager-service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 依赖pojo -->
+		<dependency>
+			<groupId>com.java.shop</groupId>
+			<artifactId>shop-manager-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -60,6 +84,7 @@
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
 	</dependencies>
 	<!-- 配置tomcat插件 -->
 	<build>

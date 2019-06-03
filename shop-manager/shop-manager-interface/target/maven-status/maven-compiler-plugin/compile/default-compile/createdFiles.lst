@@ -1,4 +1,9 @@
+com\java\service\CartService.class
+com\java\service\pojo\OrderInfo.class
 com\java\service\ItemCatService.class
 com\java\service\ItemService.class
+com\java\service\LoginService.class
+com\java\service\OrderService.class
+com\java\service\RegisterService.class
 com\java\service\ContentService.class
 com\java\service\ContentCatService.class

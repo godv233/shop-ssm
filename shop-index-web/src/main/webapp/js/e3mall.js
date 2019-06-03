@@ -1,17 +1,16 @@
 var E3MALL = {
 	checkLogin : function(){
-		var _ticket = $.cookie("TT_TOKEN");
-		if(!_ticket){
-			return ;
-		}
+		var _ticket = $.cookie("JSESSIONID");
+//		if(!_ticket){
+//			return ;
+//		}
 		$.ajax({
-			url : "http://localhost:8088/user/token/" + _ticket,
-			dataType : "jsonp",
+			url : "http://localhost/user/session.action",
 			type : "GET",
 			success : function(data){
 				if(data.status == 200){
 					var username = data.data.username;
-					var html = username + "，欢迎来到宜立方购物网！<a href=\"http://www.e3mall.cn/user/logout.html\" class=\"link-logout\">[退出]</a>";
+					var html = username + "，欢迎来到GODV购物网！<a href=\"http://localhost/user/logout.action\" class=\"link-logout\">[退出]</a>";
 					$("#loginbar").html(html);
 				}
 			}

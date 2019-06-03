@@ -9,13 +9,16 @@
 
 
 	<!-- 加载properties -->
-	<context:property-placeholder location="classpath:config/resource.properties"/>
+	<context:property-placeholder
+		location="classpath:config/resource.properties" />
 
 	<!-- 包扫描器 -->
 	<context:component-scan
 		base-package="com.java.index.controller" />
 	<!-- 处理器映射器和处理器适配器 -->
+
 	<mvc:annotation-driven />
+
 	<!-- 视图解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -25,5 +28,9 @@
 	<!-- 配置静态资源映射css和js -->
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
+
+
+
+
 
 </beans>
